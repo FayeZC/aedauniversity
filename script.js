@@ -108,7 +108,114 @@ const API = {
     }
 };
 
+// Draggable floating cards functionality
+function initDraggableCards() {
+    const cards = document.querySelectorAll('.floating-card');
+    
+    cards.forEach((card, index) => {
+        let isDragging = false;
+        let currentCard = null;
+        let startX, startY;
+        let offsetX, offsetY;
+        
+        // Prevent default dragging
+        card.draggable = false;
+        card.style.position = 'absolute';
+        
+        function startDrag(e) {
+            const event = e.type === 'mousedown' ? e : e.touches[0];
+            
+            isDragging = true;
+            currentCard = card;
+            card.classList.add('dragging');
+            
+            // Get the mouse/touch position relative to the card center
+            const rect = card.getBoundingClientRect();
+            offsetX = event.clientX - rect.left - rect.width / 2;
+            offsetY = event.clientY - rect.top - rect.height / 2;
+            
+            console.log('Started dragging:', card.textContent, 'Offset:', offsetX, offsetY);
+            
+            e.preventDefault();
+        }
+        
+        function doDrag(e) {
+            if (!isDragging || !currentCard) return;
+            
+            const event = e.type === 'mousemove' ? e : e.touches[0];
+            
+            // Calculate new position relative to the container
+            const containerRect = currentCard.parentElement.getBoundingClientRect();
+            const rect = currentCard.getBoundingClientRect();
+            
+            // Position based on center of card
+            const newX = event.clientX - containerRect.left - rect.width / 2 - offsetX;
+            const newY = event.clientY - containerRect.top - rect.height / 2 - offsetY;
+            
+            // Update card position
+            currentCard.style.left = newX + 'px';
+            currentCard.style.top = newY + 'px';
+            currentCard.style.right = 'auto';
+            currentCard.style.bottom = 'auto';
+            
+            e.preventDefault();
+        }
+        
+        function endDrag(e) {
+            if (!isDragging || !currentCard) return;
+            
+            isDragging = false;
+            currentCard.classList.remove('dragging');
+            
+            // Save position
+            const cardId = currentCard.classList.contains('card-1') ? 'card-1' : 
+                          currentCard.classList.contains('card-2') ? 'card-2' : 'card-3';
+            
+            localStorage.setItem(`${cardId}-position`, JSON.stringify({
+                left: currentCard.style.left,
+                top: currentCard.style.top
+            }));
+            
+            console.log('Finished dragging:', currentCard.textContent, 'Final position:', currentCard.style.left, currentCard.style.top);
+            
+            currentCard = null;
+            e.preventDefault();
+        }
+        
+        // Add event listeners to the card itself
+        card.addEventListener('mousedown', startDrag);
+        card.addEventListener('touchstart', startDrag, { passive: false });
+        
+        // Global move and end events
+        document.addEventListener('mousemove', doDrag);
+        document.addEventListener('mouseup', endDrag);
+        document.addEventListener('touchmove', doDrag, { passive: false });
+        document.addEventListener('touchend', endDrag);
+        
+        // Load saved position
+        const cardId = card.classList.contains('card-1') ? 'card-1' : 
+                      card.classList.contains('card-2') ? 'card-2' : 'card-3';
+        
+        const savedPosition = localStorage.getItem(`${cardId}-position`);
+        if (savedPosition) {
+            try {
+                const position = JSON.parse(savedPosition);
+                card.style.left = position.left;
+                card.style.top = position.top;
+                card.style.right = 'auto';
+                card.style.bottom = 'auto';
+                console.log('Loaded saved position for', cardId, ':', position);
+            } catch (e) {
+                console.log('Failed to load saved position for', cardId);
+            }
+        }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize draggable cards
+    initDraggableCards();
+    
     // 移动端导航菜单切换
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
