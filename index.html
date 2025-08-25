@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeDA - Attainable eDucation for All</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <span class="logo-text">AeDA</span>
+                </div>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#solutions" class="nav-link">Solutions</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#" class="nav-link cta-button">Get Started</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-text">The Future of Education</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-main">AeDA</span>
+                    <br><span class="title-subtitle">Attainable Education for All</span>
+                    <br><span class="title-highlight">for the AI Era</span>
+                </h1>
+                <p class="hero-description">
+                    The world's most advanced AI-powered education platform. 
+                    <br>Transforming how millions learn, grow, and achieve their dreams.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="API.handleGetStarted()">Start Learning</button>
+                    <button class="btn btn-secondary" onclick="API.redirectToFrontend('/courses')">Explore Courses</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">2M+</span>
+                        <span class="stat-label">Global Learners</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">AI-Powered Courses</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Success Rate</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Global Partners</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <div class="card-icon">AI</div>
+                    <div class="card-text">AI Learning</div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon">DATA</div>
+                    <div class="card-text">Analytics</div>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon">GROW</div>
+                    <div class="card-text">Progress</div>
+                </div>
+                <div class="hero-graphic">
+                    <div class="graphic-circle circle-1"></div>
+                    <div class="graphic-circle circle-2"></div>
+                    <div class="graphic-circle circle-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Powerful Features</h2>
+                <p class="section-description">
+                    Experience the next generation of personalized learning with our advanced AI technology
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">AI-Powered Learning</h3>
+                    <p class="feature-description">
+                        Personalized learning paths adapted to your unique style and pace using advanced machine learning algorithms.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Knowledge Graphs</h3>
+                    <p class="feature-description">
+                        Visualize connections between concepts and build comprehensive understanding through interactive knowledge mapping.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Progress Tracking</h3>
+                    <p class="feature-description">
+                        Real-time analytics and detailed progress reports to keep you motivated and on track towards your goals.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Collaborative Learning</h3>
+                    <p class="feature-description">
+                        Connect with peers, share insights, and learn together in our vibrant community-driven environment.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Expert Content</h3>
+                    <p class="feature-description">
+                        Access premium courses created by industry experts and leading educators from top institutions worldwide.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Multi-Platform</h3>
+                    <p class="feature-description">
+                        Learn anywhere, anytime with seamless synchronization across all your devices and platforms.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="solutions">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Solutions for Everyone</h2>
+                <p class="section-description">
+                    Whether you're a student, educator, or organization, we have the perfect solution for your learning needs
+                </p>
+            </div>
+            <div class="solutions-grid">
+                <div class="solution-card featured">
+                    <div class="solution-badge">Most Popular</div>
+                    <div class="solution-header">
+                        <div class="solution-icon">STUDENT</div>
+                        <h3 class="solution-title">For Students</h3>
+                    </div>
+                    <ul class="solution-features">
+                        <li>Personalized learning paths</li>
+                        <li>Interactive knowledge graphs</li>
+                        <li>Progress tracking & analytics</li>
+                        <li>Peer collaboration tools</li>
+                        <li>Mobile learning apps</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="API.handleGetStarted()">Get Started</button>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-header">
+                        <div class="solution-icon">TEACHER</div>
+                        <h3 class="solution-title">For Educators</h3>
+                    </div>
+                    <ul class="solution-features">
+                        <li>Curriculum design tools</li>
+                        <li>Student progress monitoring</li>
+                        <li>Assessment & grading</li>
+                        <li>Content creation platform</li>
+                        <li>Analytics dashboard</li>
+                    </ul>
+                    <button class="btn btn-outline" onclick="API.redirectToFrontend('/teacher-portal')">Learn More</button>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-header">
+                        <div class="solution-icon">ENTERPRISE</div>
+                        <h3 class="solution-title">For Organizations</h3>
+                    </div>
+                    <ul class="solution-features">
+                        <li>Enterprise-grade security</li>
+                        <li>Custom branding options</li>
+                        <li>Advanced analytics</li>
+                        <li>API integrations</li>
+                        <li>24/7 dedicated support</li>
+                    </ul>
+                    <button class="btn btn-outline" onclick="window.open('mailto:contact@aedauniversity.com?subject=Enterprise Inquiry', '_blank')">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Transform Your Learning Experience?</h2>
+                <p class="cta-description">
+                    Join thousands of learners who have already discovered the power of AI-driven education
+                </p>
+                <div class="cta-actions">
+                    <button class="btn btn-primary btn-large" onclick="API.handleGetStarted()">Start Free Trial</button>
+                    <button class="btn btn-secondary btn-large" onclick="window.open('mailto:contact@aedauniversity.com?subject=Demo Request', '_blank')">Schedule Demo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-text">AeDA</span>
+                    </div>
+                    <p class="footer-description">
+                        Revolutionizing education through AI-powered personalized learning experiences.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Product</h4>
+                        <ul class="footer-list">
+                            <li><a href="#" class="footer-link">Features</a></li>
+                            <li><a href="#" class="footer-link">Pricing</a></li>
+                            <li><a href="#" class="footer-link">API</a></li>
+                            <li><a href="#" class="footer-link">Integrations</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Company</h4>
+                        <ul class="footer-list">
+                            <li><a href="#" class="footer-link">About</a></li>
+                            <li><a href="#" class="footer-link">Careers</a></li>
+                            <li><a href="#" class="footer-link">Press</a></li>
+                            <li><a href="#" class="footer-link">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Support</h4>
+                        <ul class="footer-list">
+                            <li><a href="#" class="footer-link">Help Center</a></li>
+                            <li><a href="#" class="footer-link">Documentation</a></li>
+                            <li><a href="#" class="footer-link">Contact</a></li>
+                            <li><a href="#" class="footer-link">Status</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2024 AeDA University. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

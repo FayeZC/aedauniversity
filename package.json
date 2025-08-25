@@ -1,0 +1,39 @@
+{
+  "name": "aeda-website",
+  "version": "1.0.0",
+  "description": "AeDA University - Attainable eDucation for All - Modern landing page",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx live-server --port=3000 --open=/index.html",
+    "build": "echo 'Build process - copy files to dist folder'",
+    "deploy": "echo 'Deploy to production server'",
+    "lint": "npx htmlhint index.html && npx stylelint styles.css && npx eslint script.js"
+  },
+  "keywords": [
+    "education",
+    "AI",
+    "learning",
+    "website",
+    "modern",
+    "purple",
+    "technology"
+  ],
+  "author": "AeDA University",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "htmlhint": "^1.1.4",
+    "stylelint": "^15.11.0",
+    "eslint": "^8.57.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aeda-university/website"
+  },
+  "homepage": "https://aedauniversity.com",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
