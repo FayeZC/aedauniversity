@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeDA Platform Demo - Experience the Future of Learning</title>
+    <link rel="stylesheet" href="demo-styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="demo-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon">A</div>
+                <span class="logo-text">AeDA Demo</span>
+            </div>
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-tab="courses">Courses</button>
+                <button class="nav-tab" data-tab="knowledge">Knowledge Graph</button>
+                <button class="nav-tab" data-tab="academic">Academic Program</button>
+                <button class="nav-tab" data-tab="api">API Explorer</button>
+            </div>
+            <div class="demo-badge">Static Demo</div>
+        </div>
+    </nav>
+
+    <!-- Courses Page Demo -->
+    <section id="courses-demo" class="demo-section active">
+        <div class="demo-container">
+            <div class="demo-header">
+                <h2>Course Browser</h2>
+                <p>Discover AI-powered personalized learning paths</p>
+            </div>
+
+            <!-- Search and Filters -->
+            <div class="search-section">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search courses..." value="Data Structures">
+                    <button class="search-btn">Search</button>
+                </div>
+                <div class="filter-tabs">
+                    <button class="filter-tab active">All</button>
+                    <button class="filter-tab">Computer Science</button>
+                    <button class="filter-tab">Mathematics</button>
+                    <button class="filter-tab">Programming</button>
+                </div>
+            </div>
+
+            <!-- Course Grid -->
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>CS101 - Intro to Programming</h3>
+                        <span class="course-level">Beginner</span>
+                    </div>
+                    <p class="course-description">Learn the fundamentals of programming with Python. Perfect for beginners starting their coding journey.</p>
+                    <div class="course-stats">
+                        <span class="stat">12 weeks</span>
+                        <span class="stat">15 modules</span>
+                        <span class="stat">Free</span>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                        <span class="progress-text">65% Complete</span>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>DS201 - Data Structures</h3>
+                        <span class="course-level">Intermediate</span>
+                    </div>
+                    <p class="course-description">Master arrays, linked lists, trees, and graphs. Essential for technical interviews.</p>
+                    <div class="course-stats">
+                        <span class="stat">10 weeks</span>
+                        <span class="stat">18 modules</span>
+                        <span class="stat">Free</span>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 30%"></div>
+                        </div>
+                        <span class="progress-text">30% Complete</span>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <h3>ALG301 - Algorithm Design</h3>
+                        <span class="course-level">Advanced</span>
+                    </div>
+                    <p class="course-description">Advanced algorithmic thinking and optimization techniques for complex problem solving.</p>
+                    <div class="course-stats">
+                        <span class="stat">14 weeks</span>
+                        <span class="stat">22 modules</span>
+                        <span class="stat">Free</span>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">Not Started</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Knowledge Graph Demo -->
+    <section id="knowledge-demo" class="demo-section">
+        <div class="demo-container">
+            <div class="demo-header">
+                <h2>Knowledge Graph Visualization</h2>
+                <p>Interactive learning path mapping with AI-driven connections and dependency tracking</p>
+            </div>
+
+            <div class="knowledge-graph-container">
+                <!-- Enhanced Controls -->
+                <div class="graph-controls-section">
+                    <div class="graph-controls">
+                        <button class="control-btn active" data-graph="fundamentals">Programming Fundamentals</button>
+                        <button class="control-btn" data-graph="datastructures">Data Structures</button>
+                        <button class="control-btn" data-graph="algorithms">Advanced Algorithms</button>
+                        <button class="control-btn" data-graph="fullstack">Full Stack Path</button>
+                    </div>
+                    <div class="view-options">
+                        <label class="option-label">Color by:</label>
+                        <select class="view-select" id="colorMode">
+                            <option value="category">Category</option>
+                            <option value="difficulty">Difficulty</option>
+                            <option value="importance">Importance</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="knowledge-graph">
+                    <svg width="100%" height="600" viewBox="0 0 1200 600" id="knowledge-svg">
+                        <!-- Connections will be drawn dynamically -->
+                        <!-- Programming Fundamentals Graph -->
+                        <g id="fundamentals-graph">
+                            <!-- Dependencies -->
+                            <line x1="120" y1="250" x2="220" y2="180" stroke="#8b5cf6" stroke-width="2" opacity="0.7" stroke-dasharray="5,5"/>
+                            <line x1="120" y1="250" x2="220" y2="320" stroke="#8b5cf6" stroke-width="2" opacity="0.7" stroke-dasharray="5,5"/>
+                            <line x1="220" y1="180" x2="350" y2="120" stroke="#8b5cf6" stroke-width="2" opacity="0.7" stroke-dasharray="5,5"/>
+                            <line x1="220" y1="320" x2="350" y2="220" stroke="#8b5cf6" stroke-width="2" opacity="0.7" stroke-dasharray="5,5"/>
+                            <line x1="220" y1="180" x2="350" y2="320" stroke="#8b5cf6" stroke-width="2" opacity="0.7" stroke-dasharray="5,5"/>
+                            <line x1="350" y1="120" x2="500" y2="100" stroke="#8b5cf6" stroke-width="2" opacity="0.7" stroke-dasharray="5,5"/>
+                            <line x1="350" y1="220" x2="500" y2="180" stroke="#8b5cf6" stroke-width="2" opacity="0.7" stroke-dasharray="5,5"/>
+                            <line x1="350" y1="320" x2="500" y2="260" stroke="#8b5cf6" stroke-width="2" opacity="0.7" stroke-dasharray="5,5"/>
+                            <line x1="500" y1="100" x2="650" y2="140" stroke="#8b5cf6" stroke-width="2" opacity="0.7" stroke-dasharray="5,5"/>
+                            <line x1="500" y1="180" x2="650" y2="220" stroke="#8b5cf6" stroke-width="2" opacity="0.7" stroke-dasharray="5,5"/>
+                            <line x1="500" y1="260" x2="650" y2="300" stroke="#8b5cf6" stroke-width="2" opacity="0.7" stroke-dasharray="5,5"/>
+                            <line x1="650" y1="140" x2="800" y2="180" stroke="#8b5cf6" stroke-width="2" opacity="0.7" stroke-dasharray="5,5"/>
+                            <line x1="650" y1="220" x2="800" y2="250" stroke="#8b5cf6" stroke-width="2" opacity="0.7" stroke-dasharray="5,5"/>
+                            
+                            <!-- Knowledge Nodes with Enhanced Detail -->
+                            <g class="knowledge-node completed" data-knowledge="variables">
+                                <circle cx="120" cy="250" r="25" fill="#10b981" stroke="#059669" stroke-width="3"/>
+                                <text x="120" y="255" text-anchor="middle" fill="white" font-size="11" font-weight="bold">VAR</text>
+                                <text x="120" y="290" text-anchor="middle" font-size="9" fill="#374151" font-weight="500">Variables</text>
+                                <text x="120" y="305" text-anchor="middle" font-size="8" fill="#6b7280">Data Types</text>
+                            </g>
+                            
+                            <g class="knowledge-node current" data-knowledge="conditionals">
+                                <circle cx="220" cy="180" r="25" fill="#8b5cf6" stroke="#7c3aed" stroke-width="3"/>
+                                <text x="220" y="185" text-anchor="middle" fill="white" font-size="11" font-weight="bold">IF</text>
+                                <text x="220" y="220" text-anchor="middle" font-size="9" fill="#374151" font-weight="500">Conditionals</text>
+                                <text x="220" y="235" text-anchor="middle" font-size="8" fill="#6b7280">Logic Flow</text>
+                            </g>
+                            
+                            <g class="knowledge-node current" data-knowledge="loops">
+                                <circle cx="220" cy="320" r="25" fill="#8b5cf6" stroke="#7c3aed" stroke-width="3"/>
+                                <text x="220" y="325" text-anchor="middle" fill="white" font-size="11" font-weight="bold">LOOP</text>
+                                <text x="220" y="360" text-anchor="middle" font-size="9" fill="#374151" font-weight="500">Loops</text>
+                                <text x="220" y="375" text-anchor="middle" font-size="8" fill="#6b7280">Iteration</text>
+                            </g>
+                            
+                            <g class="knowledge-node available" data-knowledge="functions">
+                                <circle cx="350" cy="120" r="25" fill="#f59e0b" stroke="#d97706" stroke-width="3"/>
+                                <text x="350" y="125" text-anchor="middle" fill="white" font-size="11" font-weight="bold">FUNC</text>
+                                <text x="350" y="160" text-anchor="middle" font-size="9" fill="#374151" font-weight="500">Functions</text>
+                                <text x="350" y="175" text-anchor="middle" font-size="8" fill="#6b7280">Modular Code</text>
+                            </g>
+                            
+                            <g class="knowledge-node available" data-knowledge="arrays">
+                                <circle cx="350" cy="220" r="25" fill="#f59e0b" stroke="#d97706" stroke-width="3"/>
+                                <text x="350" y="225" text-anchor="middle" fill="white" font-size="11" font-weight="bold">ARR</text>
+                                <text x="350" y="260" text-anchor="middle" font-size="9" fill="#374151" font-weight="500">Arrays</text>
+                                <text x="350" y="275" text-anchor="middle" font-size="8" fill="#6b7280">Collections</text>
+                            </g>
+                            
+                            <g class="knowledge-node available" data-knowledge="strings">
+                                <circle cx="350" cy="320" r="25" fill="#f59e0b" stroke="#d97706" stroke-width="3"/>
+                                <text x="350" y="325" text-anchor="middle" fill="white" font-size="11" font-weight="bold">STR</text>
+                                <text x="350" y="360" text-anchor="middle" font-size="9" fill="#374151" font-weight="500">Strings</text>
+                                <text x="350" y="375" text-anchor="middle" font-size="8" fill="#6b7280">Text Processing</text>
+                            </g>
+                            
+                            <g class="knowledge-node locked" data-knowledge="objects">
+                                <circle cx="500" cy="100" r="25" fill="#d1d5db" stroke="#9ca3af" stroke-width="2"/>
+                                <text x="500" y="105" text-anchor="middle" fill="#6b7280" font-size="11" font-weight="bold">OBJ</text>
+                                <text x="500" y="140" text-anchor="middle" font-size="9" fill="#6b7280" font-weight="500">Objects</text>
+                                <text x="500" y="155" text-anchor="middle" font-size="8" fill="#9ca3af">OOP Concepts</text>
+                            </g>
+                            
+                            <g class="knowledge-node locked" data-knowledge="algorithms">
+                                <circle cx="500" cy="180" r="25" fill="#d1d5db" stroke="#9ca3af" stroke-width="2"/>
+                                <text x="500" y="185" text-anchor="middle" fill="#6b7280" font-size="11" font-weight="bold">ALGO</text>
+                                <text x="500" y="220" text-anchor="middle" font-size="9" fill="#6b7280" font-weight="500">Algorithms</text>
+                                <text x="500" y="235" text-anchor="middle" font-size="8" fill="#9ca3af">Problem Solving</text>
+                            </g>
+                            
+                            <g class="knowledge-node locked" data-knowledge="datastructures">
+                                <circle cx="500" cy="260" r="25" fill="#d1d5db" stroke="#9ca3af" stroke-width="2"/>
+                                <text x="500" y="265" text-anchor="middle" fill="#6b7280" font-size="11" font-weight="bold">DS</text>
+                                <text x="500" y="300" text-anchor="middle" font-size="9" fill="#6b7280" font-weight="500">Data Structures</text>
+                                <text x="500" y="315" text-anchor="middle" font-size="8" fill="#9ca3af">Complex Types</text>
+                            </g>
+                            
+                            <g class="knowledge-node locked" data-knowledge="recursion">
+                                <circle cx="650" cy="140" r="25" fill="#d1d5db" stroke="#9ca3af" stroke-width="2"/>
+                                <text x="650" y="145" text-anchor="middle" fill="#6b7280" font-size="11" font-weight="bold">REC</text>
+                                <text x="650" y="180" text-anchor="middle" font-size="9" fill="#6b7280" font-weight="500">Recursion</text>
+                                <text x="650" y="195" text-anchor="middle" font-size="8" fill="#9ca3af">Self-Reference</text>
+                            </g>
+                            
+                            <g class="knowledge-node locked" data-knowledge="apis">
+                                <circle cx="650" cy="220" r="25" fill="#d1d5db" stroke="#9ca3af" stroke-width="2"/>
+                                <text x="650" y="225" text-anchor="middle" fill="#6b7280" font-size="11" font-weight="bold">API</text>
+                                <text x="650" y="260" text-anchor="middle" font-size="9" fill="#6b7280" font-weight="500">APIs</text>
+                                <text x="650" y="275" text-anchor="middle" font-size="8" fill="#9ca3af">Web Services</text>
+                            </g>
+                            
+                            <g class="knowledge-node locked" data-knowledge="databases">
+                                <circle cx="650" cy="300" r="25" fill="#d1d5db" stroke="#9ca3af" stroke-width="2"/>
+                                <text x="650" y="305" text-anchor="middle" fill="#6b7280" font-size="11" font-weight="bold">DB</text>
+                                <text x="650" y="340" text-anchor="middle" font-size="9" fill="#6b7280" font-weight="500">Databases</text>
+                                <text x="650" y="355" text-anchor="middle" font-size="8" fill="#9ca3af">Data Storage</text>
+                            </g>
+                            
+                            <g class="knowledge-node locked" data-knowledge="frameworks">
+                                <circle cx="800" cy="180" r="25" fill="#d1d5db" stroke="#9ca3af" stroke-width="2"/>
+                                <text x="800" y="185" text-anchor="middle" fill="#6b7280" font-size="11" font-weight="bold">FWK</text>
+                                <text x="800" y="220" text-anchor="middle" font-size="9" fill="#6b7280" font-weight="500">Frameworks</text>
+                                <text x="800" y="235" text-anchor="middle" font-size="8" fill="#9ca3af">Development Tools</text>
+                            </g>
+                            
+                            <g class="knowledge-node locked" data-knowledge="deployment">
+                                <circle cx="800" cy="250" r="25" fill="#d1d5db" stroke="#9ca3af" stroke-width="2"/>
+                                <text x="800" y="255" text-anchor="middle" fill="#6b7280" font-size="11" font-weight="bold">DEP</text>
+                                <text x="800" y="290" text-anchor="middle" font-size="9" fill="#6b7280" font-weight="500">Deployment</text>
+                                <text x="800" y="305" text-anchor="middle" font-size="8" fill="#9ca3af">Production</text>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                
+                <!-- Enhanced Legend and Stats -->
+                <div class="knowledge-info">
+                    <div class="knowledge-legend">
+                        <div class="legend-item">
+                            <div class="legend-color completed"></div>
+                            <span>Mastered (1)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color current"></div>
+                            <span>Learning (2)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color available"></div>
+                            <span>Available (3)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color locked"></div>
+                            <span>Locked (8)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="knowledge-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Progress:</span>
+                            <span class="stat-value">21% (3/14)</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Next Goal:</span>
+                            <span class="stat-value">Functions</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Estimated Time:</span>
+                            <span class="stat-value">2-3 weeks</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Knowledge Point Detail Panel -->
+                <div class="knowledge-detail" id="knowledge-detail" style="display: none;">
+                    <div class="detail-header">
+                        <h4 id="detail-title">Knowledge Point</h4>
+                        <button class="detail-close" onclick="closeKnowledgeDetail()">×</button>
+                    </div>
+                    <div class="detail-content">
+                        <div class="detail-section">
+                            <strong>Description:</strong>
+                            <p id="detail-description">Select a knowledge point to see details</p>
+                        </div>
+                        <div class="detail-section">
+                            <strong>Prerequisites:</strong>
+                            <div id="detail-prerequisites"></div>
+                        </div>
+                        <div class="detail-section">
+                            <strong>Learning Resources:</strong>
+                            <div id="detail-resources"></div>
+                        </div>
+                        <div class="detail-section">
+                            <strong>Practice Problems:</strong>
+                            <div id="detail-problems"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Program Demo -->
+    <section id="academic-demo" class="demo-section">
+        <div class="demo-container">
+            <div class="demo-header">
+                <h2>Academic Program Management</h2>
+                <p>Comprehensive computer science curriculum based on Hunter College CUNY data</p>
+            </div>
+
+            <div class="academic-dashboard">
+                <!-- Program Overview -->
+                <div class="program-overview">
+                    <div class="overview-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">10</div>
+                            <div class="stat-label">Core Courses</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">36</div>
+                            <div class="stat-label">Total Credits</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Year Program</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">8</div>
+                            <div class="stat-label">Course Groups</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Catalog -->
+                <div class="course-catalog">
+                    <h3>Course Catalog</h3>
+                    <div class="course-grid">
+                        <div class="course-item foundation">
+                            <div class="course-code">CSCI 12700</div>
+                            <div class="course-title">Introduction to Computer Science</div>
+                            <div class="course-details">
+                                <span class="credits">3 Credits</span>
+                                <span class="level">Foundation</span>
+                            </div>
+                            <div class="course-description">
+                                Programming fundamentals with Python and computational thinking.
+                            </div>
+                            <div class="prerequisites">
+                                <span class="prereq-label">Prerequisites:</span>
+                                <span class="no-prereq">None</span>
+                            </div>
+                        </div>
+
+                        <div class="course-item programming">
+                            <div class="course-code">CSCI 13500</div>
+                            <div class="course-title">Software Analysis and Design 1</div>
+                            <div class="course-details">
+                                <span class="credits">4 Credits</span>
+                                <span class="level">Programming</span>
+                            </div>
+                            <div class="course-description">
+                                Advanced programming concepts and software design principles.
+                            </div>
+                            <div class="prerequisites">
+                                <span class="prereq-label">Prerequisites:</span>
+                                <span class="prereq">CSCI 12700</span>
+                            </div>
+                        </div>
+
+                        <div class="course-item mathematics">
+                            <div class="course-code">CSCI 15000</div>
+                            <div class="course-title">Discrete Structures</div>
+                            <div class="course-details">
+                                <span class="credits">3 Credits</span>
+                                <span class="level">Mathematics</span>
+                            </div>
+                            <div class="course-description">
+                                Mathematical foundations including logic, sets, and graph theory.
+                            </div>
+                            <div class="prerequisites">
+                                <span class="prereq-label">Prerequisites:</span>
+                                <span class="prereq">MATH 15000</span>
+                            </div>
+                        </div>
+
+                        <div class="course-item systems">
+                            <div class="course-code">CSCI 16000</div>
+                            <div class="course-title">Computer Architecture</div>
+                            <div class="course-details">
+                                <span class="credits">4 Credits</span>
+                                <span class="level">Systems</span>
+                            </div>
+                            <div class="course-description">
+                                CPU design, memory systems, and assembly language programming.
+                            </div>
+                            <div class="prerequisites">
+                                <span class="prereq-label">Prerequisites:</span>
+                                <span class="prereq">CSCI 12700</span>
+                            </div>
+                        </div>
+
+                        <div class="course-item algorithms">
+                            <div class="course-code">CSCI 26000</div>
+                            <div class="course-title">Data Structures and Algorithms</div>
+                            <div class="course-details">
+                                <span class="credits">4 Credits</span>
+                                <span class="level">Algorithms</span>
+                            </div>
+                            <div class="course-description">
+                                Fundamental data structures and algorithmic problem solving.
+                            </div>
+                            <div class="prerequisites">
+                                <span class="prereq-label">Prerequisites:</span>
+                                <span class="prereq">CSCI 23500, CSCI 15000</span>
+                            </div>
+                        </div>
+
+                        <div class="course-item engineering">
+                            <div class="course-code">CSCI 33500</div>
+                            <div class="course-title">Software Engineering</div>
+                            <div class="course-details">
+                                <span class="credits">4 Credits</span>
+                                <span class="level">Engineering</span>
+                            </div>
+                            <div class="course-description">
+                                Software engineering principles and team-based development.
+                            </div>
+                            <div class="prerequisites">
+                                <span class="prereq-label">Prerequisites:</span>
+                                <span class="prereq">CSCI 26000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Academic Path Planner -->
+                <div class="path-planner">
+                    <h3>4-Year Academic Path</h3>
+                    <div class="semester-grid">
+                        <div class="semester-card">
+                            <div class="semester-header">Year 1, Fall</div>
+                            <div class="semester-courses">
+                                <div class="semester-course foundation">CSCI 12700</div>
+                            </div>
+                            <div class="semester-credits">3 Credits</div>
+                        </div>
+
+                        <div class="semester-card">
+                            <div class="semester-header">Year 1, Spring</div>
+                            <div class="semester-courses">
+                                <div class="semester-course programming">CSCI 13500</div>
+                                <div class="semester-course mathematics">CSCI 15000</div>
+                            </div>
+                            <div class="semester-credits">7 Credits</div>
+                        </div>
+
+                        <div class="semester-card">
+                            <div class="semester-header">Year 2, Fall</div>
+                            <div class="semester-courses">
+                                <div class="semester-course systems">CSCI 16000</div>
+                                <div class="semester-course programming">CSCI 23500</div>
+                            </div>
+                            <div class="semester-credits">8 Credits</div>
+                        </div>
+
+                        <div class="semester-card">
+                            <div class="semester-header">Year 2, Spring</div>
+                            <div class="semester-courses">
+                                <div class="semester-course algorithms">CSCI 26000</div>
+                                <div class="semester-course theory">CSCI 26500</div>
+                            </div>
+                            <div class="semester-credits">7 Credits</div>
+                        </div>
+
+                        <div class="semester-card">
+                            <div class="semester-header">Year 3, Fall</div>
+                            <div class="semester-courses">
+                                <div class="semester-course engineering">CSCI 33500</div>
+                            </div>
+                            <div class="semester-credits">4 Credits</div>
+                        </div>
+
+                        <div class="semester-card">
+                            <div class="semester-header">Year 3, Spring</div>
+                            <div class="semester-courses">
+                                <div class="semester-course systems">CSCI 34000</div>
+                            </div>
+                            <div class="semester-credits">4 Credits</div>
+                        </div>
+
+                        <div class="semester-card">
+                            <div class="semester-header">Year 4, Fall</div>
+                            <div class="semester-courses">
+                                <div class="semester-course capstone">CSCI 39500</div>
+                            </div>
+                            <div class="semester-credits">3 Credits</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Groups Legend -->
+                <div class="course-groups">
+                    <h3>Course Categories</h3>
+                    <div class="groups-grid">
+                        <div class="group-item foundation">
+                            <div class="group-color"></div>
+                            <div class="group-info">
+                                <div class="group-name">Foundation</div>
+                                <div class="group-desc">Introductory programming concepts</div>
+                            </div>
+                        </div>
+                        <div class="group-item programming">
+                            <div class="group-color"></div>
+                            <div class="group-info">
+                                <div class="group-name">Programming</div>
+                                <div class="group-desc">Software development principles</div>
+                            </div>
+                        </div>
+                        <div class="group-item mathematics">
+                            <div class="group-color"></div>
+                            <div class="group-info">
+                                <div class="group-name">Mathematics</div>
+                                <div class="group-desc">Mathematical foundations</div>
+                            </div>
+                        </div>
+                        <div class="group-item systems">
+                            <div class="group-color"></div>
+                            <div class="group-info">
+                                <div class="group-name">Systems</div>
+                                <div class="group-desc">Computer architecture & OS</div>
+                            </div>
+                        </div>
+                        <div class="group-item algorithms">
+                            <div class="group-color"></div>
+                            <div class="group-info">
+                                <div class="group-name">Algorithms</div>
+                                <div class="group-desc">Data structures & algorithms</div>
+                            </div>
+                        </div>
+                        <div class="group-item engineering">
+                            <div class="group-color"></div>
+                            <div class="group-info">
+                                <div class="group-name">Engineering</div>
+                                <div class="group-desc">Software engineering practices</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Explorer Demo -->
+    <section id="api-demo" class="demo-section">
+        <div class="demo-container">
+            <div class="demo-header">
+                <h2>API Explorer</h2>
+                <p>Test and explore our educational platform API endpoints</p>
+            </div>
+
+            <div class="api-explorer">
+                <div class="api-input-section">
+                    <div class="api-input-group">
+                        <label>Base URL:</label>
+                        <input type="text" value="https://api.aedauniversity.com" readonly>
+                    </div>
+                    <button class="explore-btn">Explore API</button>
+                </div>
+
+                <div class="api-endpoints">
+                    <h3>Available Endpoints</h3>
+                    
+                    <div class="endpoint-item">
+                        <div class="endpoint-header">
+                            <span class="method get">GET</span>
+                            <span class="endpoint-path">/api/courses</span>
+                            <span class="endpoint-status success">✓ 200</span>
+                        </div>
+                        <div class="endpoint-description">Retrieve all available courses</div>
+                        <div class="endpoint-response">
+                            <pre>{
+  "courses": [
+    {
+      "id": "CS101",
+      "name": "Intro to Programming",
+      "level": "beginner",
+      "duration": "12 weeks"
+    },
+    {
+      "id": "DS201", 
+      "name": "Data Structures",
+      "level": "intermediate", 
+      "duration": "10 weeks"
+    }
+  ]
+}</pre>
+                        </div>
+                    </div>
+
+                    <div class="endpoint-item">
+                        <div class="endpoint-header">
+                            <span class="method get">GET</span>
+                            <span class="endpoint-path">/api/knowledge-graph</span>
+                            <span class="endpoint-status success">✓ 200</span>
+                        </div>
+                        <div class="endpoint-description">Get knowledge point dependencies</div>
+                        <div class="endpoint-response">
+                            <pre>{
+  "nodes": [
+    {"id": "variables", "category": "fundamentals"},
+    {"id": "loops", "category": "control"},
+    {"id": "functions", "category": "modular"}
+  ],
+  "links": [
+    {"source": "variables", "target": "loops"},
+    {"source": "loops", "target": "functions"}
+  ]
+}</pre>
+                        </div>
+                    </div>
+
+                    <div class="endpoint-item">
+                        <div class="endpoint-header">
+                            <span class="method post">POST</span>
+                            <span class="endpoint-path">/api/upload</span>
+                            <span class="endpoint-status success">✓ 201</span>
+                        </div>
+                        <div class="endpoint-description">Upload educational materials</div>
+                        <div class="endpoint-response">
+                            <pre>{
+  "success": true,
+  "file_id": "f123456",
+  "filename": "lecture_notes.pdf",
+  "upload_time": "2025-01-15T10:30:00Z"
+}</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Footer -->
+    <footer class="demo-footer">
+        <div class="footer-content">
+            <p>🚀 This is a static demonstration of AeDA's platform capabilities.</p>
+            <p>Experience the full interactive version at <strong>aedauniversity.com</strong></p>
+            <button class="back-to-main" onclick="window.location.href='index.html'">Back to Homepage</button>
+        </div>
+    </footer>
+
+    <script src="demo-script.js"></script>
+</body>
+</html>
