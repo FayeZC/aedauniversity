@@ -387,15 +387,6 @@ body {
 
 .knowledge-node {
   cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.knowledge-node:hover {
-  transform: scale(1.02);
-}
-
-.knowledge-node:hover circle {
-  filter: brightness(1.1) drop-shadow(0 4px 8px rgba(0,0,0,0.2));
 }
 
 .knowledge-node.completed circle {
@@ -411,10 +402,6 @@ body {
   stroke-width: 4;
 }
 
-.knowledge-node:active {
-  transform: scale(1.03);
-  transition: transform 0.08s ease;
-}
 
 @keyframes completedPulse {
   0%, 100% { 

@@ -488,52 +488,52 @@ function showKnowledgeDetail(knowledgeType) {
     const knowledgeData = {
         variables: {
             title: 'Variables and Data Types',
-            description: '变量是编程的基础构建块，就像数学中的 x、y 一样代表可变的值。在编程中，变量是内存中的命名存储位置，用来保存不同类型的数据。\n\n核心概念：\n• 声明：告诉计算机创建一个存储空间\n• 初始化：给变量赋予初始值\n• 赋值：更改变量的值\n\n主要数据类型：\n• 整数 (int)：如 42, -17, 0\n• 浮点数 (float)：如 3.14, -2.5\n• 字符串 (string)：如 "Hello", "AeDA"\n• 布尔值 (boolean)：true 或 false\n\n变量命名规则：\n• 使用有意义的名称（age 而不是 a）\n• 遵循驼峰命名法（firstName）\n• 避免关键字和特殊字符\n\n实际应用：在任何程序中，变量都用来存储用户输入、计算结果、状态信息等。掌握变量是学习编程的第一步。',
+            description: 'Variables are the fundamental building blocks of programming, much like x and y in mathematics represent changeable values. In programming, variables are named storage locations in memory that hold different types of data.\n\nCore Concepts:\n• Declaration: Tell the computer to create a storage space\n• Initialization: Give the variable an initial value\n• Assignment: Change the variable\'s value\n\nMain Data Types:\n• Integer (int): like 42, -17, 0\n• Float (float): like 3.14, -2.5\n• String (string): like "Hello", "AeDA"\n• Boolean (boolean): true or false\n\nVariable Naming Rules:\n• Use meaningful names (age instead of a)\n• Follow camelCase convention (firstName)\n• Avoid keywords and special characters\n\nPractical Applications: In any program, variables store user input, calculation results, state information, etc. Mastering variables is the first step in learning programming.',
             prerequisites: [],
-            resources: ['变量声明与初始化', '数据类型转换', '作用域详解', '内存管理基础'],
-            problems: ['变量命名规范', '类型安全检查', '作用域理解', '内存泄漏预防']
+            resources: ['Variable Declaration & Initialization', 'Data Type Conversion', 'Scope Explained', 'Memory Management Basics'],
+            problems: ['Variable Naming Conventions', 'Type Safety Checking', 'Scope Understanding', 'Memory Leak Prevention']
         },
         conditionals: {
             title: 'Conditional Statements',
-            description: '条件语句是程序的"决策大脑"，让程序能够根据不同情况执行不同的代码路径。就像现实生活中的"如果...那么..."逻辑。\n\n基本结构：\n• if 语句：如果条件为真，执行代码块\n• else 语句：如果条件为假，执行替代代码\n• else if：处理多个条件的链式判断\n\n比较操作符：\n• == 等于, != 不等于\n• > 大于, < 小于\n• >= 大于等于, <= 小于等于\n\n逻辑操作符：\n• && (AND)：两个条件都为真\n• || (OR)：任一条件为真\n• ! (NOT)：条件取反\n\n实际场景：\n• 用户登录验证：检查用户名和密码\n• 年龄判断：确定是否成年\n• 游戏逻辑：角色生命值判断\n• 表单验证：检查输入是否有效\n\nSwitch 语句：当需要处理多个固定值的判断时，switch 比多个 if-else 更清晰高效。',
+            description: 'Conditional statements are the "decision-making brain" of programs, allowing code to execute different paths based on various conditions. They work like real-life "if...then..." logic.\n\nBasic Structure:\n• if statement: Execute code block if condition is true\n• else statement: Execute alternative code if condition is false\n• else if: Handle multiple conditions in a chain\n\nComparison Operators:\n• == equal, != not equal\n• > greater than, < less than\n• >= greater than or equal, <= less than or equal\n\nLogical Operators:\n• && (AND): Both conditions must be true\n• || (OR): Either condition can be true\n• ! (NOT): Negate the condition\n\nReal-world Scenarios:\n• User login validation: Check username and password\n• Age verification: Determine if user is adult\n• Game logic: Character health status\n• Form validation: Check if input is valid\n\nSwitch Statement: When handling multiple fixed values, switch is clearer and more efficient than multiple if-else statements.',
             prerequisites: ['Variables'],
-            resources: ['布尔逻辑基础', '条件表达式设计', '嵌套条件优化', '三元运算符'],
-            problems: ['复杂条件逻辑', '条件嵌套深度', '边界条件处理', '性能优化']
+            resources: ['Boolean Logic Fundamentals', 'Conditional Expression Design', 'Nested Condition Optimization', 'Ternary Operators'],
+            problems: ['Complex Conditional Logic', 'Condition Nesting Depth', 'Edge Case Handling', 'Performance Optimization']
         },
         loops: {
             title: 'Loops and Iteration',
-            description: '循环是编程中的"重复执行器"，让程序能够自动重复执行代码块，避免重复编写相同代码。就像工厂流水线一样高效处理批量任务。\n\n三种主要循环类型：\n\n1. For 循环 - 已知次数的循环\n• 语法：for(初始化; 条件; 更新)\n• 适用：遍历数组、重复固定次数\n• 示例：打印 1 到 10 的数字\n\n2. While 循环 - 条件驱动的循环\n• 语法：while(条件)\n• 适用：不确定循环次数的情况\n• 示例：读取文件直到结束\n\n3. Do-While 循环 - 至少执行一次\n• 语法：do { 代码 } while(条件)\n• 适用：需要先执行再判断的场景\n• 示例：用户菜单选择\n\n重要概念：\n• 循环变量：控制循环次数的变量\n• 循环体：重复执行的代码块\n• 终止条件：防止无限循环的条件\n\n常见陷阱：\n• 无限循环：忘记更新循环条件\n• Off-by-one 错误：循环边界错误\n\n实际应用：数据处理、用户界面更新、游戏主循环、批量文件处理等。',
+            description: 'Loops are the "repetition engines" of programming, allowing programs to automatically repeat code blocks and avoid writing the same code multiple times. They work like efficient assembly lines for batch processing.\n\nThree Main Loop Types:\n\n1. For Loop - Known iteration count\n• Syntax: for(initialization; condition; update)\n• Use cases: Array traversal, fixed repetitions\n• Example: Print numbers 1 to 10\n\n2. While Loop - Condition-driven loop\n• Syntax: while(condition)\n• Use cases: Unknown iteration count\n• Example: Read file until end\n\n3. Do-While Loop - Execute at least once\n• Syntax: do { code } while(condition)\n• Use cases: Execute first, then check condition\n• Example: User menu selection\n\nImportant Concepts:\n• Loop variable: Variable controlling iteration count\n• Loop body: Code block that repeats\n• Termination condition: Prevents infinite loops\n\nCommon Pitfalls:\n• Infinite loops: Forgetting to update loop condition\n• Off-by-one errors: Loop boundary mistakes\n\nPractical Applications: Data processing, UI updates, game main loops, batch file processing, etc.',
             prerequisites: ['Variables', 'Conditionals'],
-            resources: ['循环设计模式', '性能优化技巧', '嵌套循环应用', '循环不变式'],
-            problems: ['无限循环调试', '循环效率优化', '边界条件处理', '嵌套循环复杂度']
+            resources: ['Loop Design Patterns', 'Performance Optimization', 'Nested Loop Applications', 'Loop Invariants'],
+            problems: ['Infinite Loop Debugging', 'Loop Efficiency Optimization', 'Boundary Condition Handling', 'Nested Loop Complexity']
         },
         functions: {
             title: 'Functions and Modularity',
-            description: '函数是编程的"工具箱"，将复杂问题分解成可管理的小块。就像数学中的函数 f(x) = x²，接受输入并产生输出。\n\n核心概念：\n• 函数定义：创建可重用的代码块\n• 函数调用：执行已定义的函数\n• 参数：函数的输入数据\n• 返回值：函数的输出结果\n\n函数的优势：\n• 代码重用：避免重复编写相同逻辑\n• 模块化：将大问题分解为小问题\n• 易于测试：独立测试每个功能\n• 易于维护：修改功能只需改一处\n\n参数传递方式：\n• 按值传递：传递数据的副本\n• 按引用传递：传递数据的地址\n\n作用域概念：\n• 局部变量：函数内部定义的变量\n• 全局变量：程序全局可访问的变量\n• 参数作用域：参数在函数内的可见性\n\n函数设计原则：\n• 单一职责：每个函数只做一件事\n• 有意义的命名：函数名要说明其功能\n• 适当的参数：不过多不过少\n• 清晰的返回值：明确函数的输出\n\n实际应用：计算器功能、数据验证、用户界面组件、算法实现等。',
+            description: 'Functions are programming "toolboxes" that break complex problems into manageable chunks. Like mathematical functions f(x) = x², they accept input and produce output.\n\nCore Concepts:\n• Function definition: Create reusable code blocks\n• Function call: Execute a defined function\n• Parameters: Input data for the function\n• Return value: Output result from the function\n\nFunction Advantages:\n• Code reuse: Avoid writing the same logic repeatedly\n• Modularity: Break large problems into smaller ones\n• Easy testing: Test each functionality independently\n• Easy maintenance: Modify functionality in one place\n\nParameter Passing Methods:\n• Pass by value: Pass a copy of the data\n• Pass by reference: Pass the address of the data\n\nScope Concepts:\n• Local variables: Variables defined inside functions\n• Global variables: Variables accessible throughout the program\n• Parameter scope: Visibility of parameters within functions\n\nFunction Design Principles:\n• Single responsibility: Each function does one thing\n• Meaningful naming: Function names should describe functionality\n• Appropriate parameters: Not too many, not too few\n• Clear return values: Make function output explicit\n\nPractical Applications: Calculator functions, data validation, UI components, algorithm implementation, etc.',
             prerequisites: ['Variables', 'Conditionals', 'Loops'],
-            resources: ['函数设计原则', '参数传递机制', '递归函数入门', '高阶函数概念'],
-            problems: ['函数分解策略', '参数设计优化', '返回值处理', '作用域管理']
+            resources: ['Function Design Principles', 'Parameter Passing Mechanisms', 'Recursion Fundamentals', 'Higher-Order Functions'],
+            problems: ['Function Decomposition Strategy', 'Parameter Design Optimization', 'Return Value Handling', 'Scope Management']
         },
         arrays: {
             title: 'Arrays and Collections',
-            description: '数组是编程中的"整理箱"，能够在一个变量中存储多个相同类型的数据项。就像书架上按顺序排列的书籍，每本书都有固定的位置编号。\n\n基本概念：\n• 元素：数组中的每个数据项\n• 索引：元素在数组中的位置（通常从 0 开始）\n• 长度：数组包含的元素个数\n• 连续存储：元素在内存中连续排列\n\n数组操作：\n• 访问：通过索引获取元素值\n• 修改：通过索引更改元素值\n• 遍历：依次访问所有元素\n• 搜索：查找特定元素的位置\n\n常用数组方法：\n• 添加元素：push(), unshift()\n• 删除元素：pop(), shift(), splice()\n• 查找元素：indexOf(), find(), includes()\n• 变换数组：map(), filter(), reduce()\n\n多维数组：\n• 二维数组：表格形式的数据（如棋盘）\n• 三维数组：立体数据结构\n• 访问方式：array[row][column]\n\n数组 vs 其他数据结构：\n• 优势：随机访问快、内存效率高\n• 劣势：插入删除慢、大小固定\n\n实际应用：\n• 学生成绩列表\n• 购物车商品\n• 游戏地图数据\n• 图像像素数据\n• 音频采样数据',
+            description: 'Arrays are programming "storage boxes" that can store multiple data items of the same type in a single variable. Like books arranged in order on a shelf, each book has a fixed position number.\n\nBasic Concepts:\n• Elements: Each data item in the array\n• Index: Position of element in array (usually starts from 0)\n• Length: Number of elements the array contains\n• Contiguous storage: Elements arranged consecutively in memory\n\nArray Operations:\n• Access: Get element value through index\n• Modify: Change element value through index\n• Traverse: Visit all elements sequentially\n• Search: Find the position of a specific element\n\nCommon Array Methods:\n• Add elements: push(), unshift()\n• Remove elements: pop(), shift(), splice()\n• Find elements: indexOf(), find(), includes()\n• Transform arrays: map(), filter(), reduce()\n\nMulti-dimensional Arrays:\n• 2D arrays: Tabular data (like chessboard)\n• 3D arrays: Three-dimensional data structures\n• Access method: array[row][column]\n\nArrays vs Other Data Structures:\n• Advantages: Fast random access, high memory efficiency\n• Disadvantages: Slow insertion/deletion, fixed size\n\nPractical Applications:\n• Student grade lists\n• Shopping cart items\n• Game map data\n• Image pixel data\n• Audio sampling data',
             prerequisites: ['Variables', 'Loops'],
-            resources: ['数组算法集合', '多维数组应用', '动态数组实现', '数组性能分析'],
-            problems: ['数组边界检查', '内存管理优化', '查找算法选择', '排序算法实现']
+            resources: ['Array Algorithm Collection', 'Multi-dimensional Array Applications', 'Dynamic Array Implementation', 'Array Performance Analysis'],
+            problems: ['Array Boundary Checking', 'Memory Management Optimization', 'Search Algorithm Selection', 'Sorting Algorithm Implementation']
         },
         strings: {
             title: 'String Processing',
-            description: '字符串是编程中的"文本处理器"，用于处理和操作文本数据。在现代应用中，文本处理无处不在，从用户界面到数据分析。\n\n字符串基础：\n• 字符序列：字符串是字符的有序集合\n• 不可变性：很多语言中字符串创建后不可修改\n• 字符编码：ASCII、UTF-8、Unicode 等\n• 转义字符：\\n（换行）、\\t（制表符）等\n\n核心操作：\n• 连接：将多个字符串合并\n• 分割：按分隔符将字符串拆分\n• 搜索：查找子字符串位置\n• 替换：用新内容替换指定部分\n• 截取：提取字符串的一部分\n\n常用字符串方法：\n• length：获取字符串长度\n• substring/slice：截取子字符串\n• indexOf/search：查找子字符串\n• replace：替换内容\n• split：分割为数组\n• trim：去除空白字符\n\n正则表达式：\n• 模式匹配：用特殊语法描述文本模式\n• 验证功能：检查邮箱、电话号码格式\n• 提取数据：从文本中提取所需信息\n• 批量替换：复杂的查找替换操作\n\n字符串算法：\n• 回文检测：判断字符串是否对称\n• 字符统计：计算字符出现频率\n• 字符串匹配：KMP、Boyer-Moore 算法\n• 编辑距离：计算字符串相似度\n\n实际应用：\n• 用户输入验证\n• 文本编辑器功能\n• 日志分析\n• 自然语言处理\n• 网页内容解析',
+            description: 'Strings are programming "text processors" used to handle and manipulate text data. In modern applications, text processing is everywhere, from user interfaces to data analysis.\n\nString Fundamentals:\n• Character sequence: Strings are ordered collections of characters\n• Immutability: In many languages, strings cannot be modified after creation\n• Character encoding: ASCII, UTF-8, Unicode, etc.\n• Escape characters: \\n (newline), \\t (tab), etc.\n\nCore Operations:\n• Concatenation: Merge multiple strings\n• Splitting: Break string by delimiter\n• Searching: Find substring position\n• Replacement: Replace content with new content\n• Extraction: Extract part of a string\n\nCommon String Methods:\n• length: Get string length\n• substring/slice: Extract substring\n• indexOf/search: Find substring\n• replace: Replace content\n• split: Split into array\n• trim: Remove whitespace\n\nRegular Expressions:\n• Pattern matching: Use special syntax to describe text patterns\n• Validation: Check email, phone number formats\n• Data extraction: Extract needed information from text\n• Batch replacement: Complex find and replace operations\n\nString Algorithms:\n• Palindrome detection: Check if string is symmetric\n• Character counting: Calculate character frequency\n• String matching: KMP, Boyer-Moore algorithms\n• Edit distance: Calculate string similarity\n\nPractical Applications:\n• User input validation\n• Text editor functionality\n• Log analysis\n• Natural language processing\n• Web content parsing',
             prerequisites: ['Variables', 'Arrays'],
-            resources: ['正则表达式指南', '字符编码详解', '文本算法集合', '国际化处理'],
-            problems: ['字符编码处理', '性能优化技巧', '模式匹配复杂度', '内存使用优化']
+            resources: ['Regular Expression Guide', 'Character Encoding Details', 'Text Algorithm Collection', 'Internationalization Handling'],
+            problems: ['Character Encoding Handling', 'Performance Optimization', 'Pattern Matching Complexity', 'Memory Usage Optimization']
         },
         objects: {
             title: 'Objects and Classes',
-            description: '对象是现实世界实体在编程中的抽象表示。就像现实中的"汽车"有颜色、品牌等属性，以及启动、刹车等行为。\n\n面向对象核心概念：\n• 对象：数据和操作数据方法的集合\n• 属性：对象的特征和状态\n• 方法：对象能执行的操作\n• 实例：类的具体实现\n\n对象的优势：\n• 数据封装：相关数据组织在一起\n• 现实建模：更接近人类思维方式\n• 代码重用：对象可以被多次使用\n• 易于维护：修改局限在对象内部\n\n对象创建方式：\n• 字面量语法：{name: "John", age: 25}\n• 构造函数：new Person("John", 25)\n• Object.create()：基于原型创建\n• ES6 类语法：class Person {}\n\n对象操作：\n• 属性访问：obj.property 或 obj["property"]\n• 属性修改：obj.property = newValue\n• 方法调用：obj.method()\n• 属性遍历：for...in 循环\n\n实际应用示例：\n• 用户对象：姓名、邮箱、登录方法\n• 商品对象：价格、库存、购买方法\n• 游戏角色：生命值、技能、攻击方法\n• 图形对象：坐标、颜色、绘制方法',
+            description: 'Objects are abstract representations of real-world entities in programming. Just like a real "car" has properties like color and brand, as well as behaviors like starting and braking.\n\nObject-Oriented Core Concepts:\n• Object: Collection of data and methods to operate on that data\n• Properties: Characteristics and state of the object\n• Methods: Operations the object can perform\n• Instance: Concrete implementation of a class\n\nObject Advantages:\n• Data encapsulation: Related data organized together\n• Real-world modeling: Closer to human thinking patterns\n• Code reuse: Objects can be used multiple times\n• Easy maintenance: Changes limited to object internals\n\nObject Creation Methods:\n• Literal syntax: {name: "John", age: 25}\n• Constructor function: new Person("John", 25)\n• Object.create(): Create based on prototype\n• ES6 class syntax: class Person {}\n\nObject Operations:\n• Property access: obj.property or obj["property"]\n• Property modification: obj.property = newValue\n• Method invocation: obj.method()\n• Property traversal: for...in loop\n\nPractical Application Examples:\n• User object: Name, email, login method\n• Product object: Price, inventory, purchase method\n• Game character: Health, skills, attack method\n• Graphics object: Coordinates, color, draw method',
             prerequisites: ['Functions', 'Arrays'],
-            resources: ['对象设计模式', '原型链机制', '属性描述符', '对象序列化'],
-            problems: ['对象设计原则', '内存管理', '属性访问优化', '对象拷贝策略']
+            resources: ['Object Design Patterns', 'Prototype Chain Mechanism', 'Property Descriptors', 'Object Serialization'],
+            problems: ['Object Design Principles', 'Memory Management', 'Property Access Optimization', 'Object Copying Strategies']
         },
         classes: {
             title: 'Classes and Inheritance',
@@ -880,9 +880,6 @@ function createKnowledgeGraphAnimated(graphData) {
         group.classList.add('knowledge-node', node.status);
         group.setAttribute('data-knowledge', node.id);
         group.style.opacity = '0';
-        group.style.transform = 'scale(0)';
-        group.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-        group.style.transformOrigin = `${node.x}px ${node.y}px`;
         
         // Circle
         const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
@@ -918,31 +915,13 @@ function createKnowledgeGraphAnimated(graphData) {
         group.appendChild(subtitle);
         svg.appendChild(group);
         
-        // Animate node appearing with spring effect
+        // Simply show the node
         setTimeout(() => {
             group.style.opacity = '1';
-            group.style.transform = 'scale(1)';
-            // Ensure transform-origin is set correctly for hover effects
-            group.style.transformOrigin = `${node.x}px ${node.y}px`;
         }, index * 100 + 50);
         
-        // Add subtle click effect
+        // Simple click handler - no animations
         group.addEventListener('click', () => {
-            // Very gentle pulse animation - just a micro scale
-            const originalTransition = group.style.transition;
-            group.style.transition = 'transform 0.1s ease-out';
-            group.style.transform = 'scale(1.05)';
-            
-            setTimeout(() => {
-                group.style.transition = 'transform 0.1s ease-in';
-                group.style.transform = 'scale(1)';
-                
-                // Restore original transition after animation
-                setTimeout(() => {
-                    group.style.transition = originalTransition;
-                }, 100);
-            }, 100);
-            
             const knowledgeType = node.id;
             showKnowledgeDetail(knowledgeType);
         });
