@@ -388,7 +388,6 @@ body {
 .knowledge-node {
   cursor: pointer;
   transition: all 0.15s ease;
-  transform-origin: center;
 }
 
 .knowledge-node:hover {

@@ -882,7 +882,7 @@ function createKnowledgeGraphAnimated(graphData) {
         group.style.opacity = '0';
         group.style.transform = 'scale(0)';
         group.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-        group.style.transformOrigin = 'center';
+        group.style.transformOrigin = `${node.x}px ${node.y}px`;
         
         // Circle
         const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
@@ -922,6 +922,8 @@ function createKnowledgeGraphAnimated(graphData) {
         setTimeout(() => {
             group.style.opacity = '1';
             group.style.transform = 'scale(1)';
+            // Ensure transform-origin is set correctly for hover effects
+            group.style.transformOrigin = `${node.x}px ${node.y}px`;
         }, index * 100 + 50);
         
         // Add subtle click effect
