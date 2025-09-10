@@ -484,49 +484,63 @@ function showKnowledgeDetail(knowledgeType) {
     const detailResources = document.getElementById('detail-resources');
     const detailProblems = document.getElementById('detail-problems');
     
-    // Knowledge point data
+    // Comprehensive Knowledge Point Data with Detailed Explanations
     const knowledgeData = {
         variables: {
             title: 'Variables and Data Types',
-            description: 'Fundamental concept of storing and manipulating data in programs. Variables are containers that hold values of different types like numbers, text, and booleans.',
+            description: '变量是编程的基础构建块，就像数学中的 x、y 一样代表可变的值。在编程中，变量是内存中的命名存储位置，用来保存不同类型的数据。\n\n核心概念：\n• 声明：告诉计算机创建一个存储空间\n• 初始化：给变量赋予初始值\n• 赋值：更改变量的值\n\n主要数据类型：\n• 整数 (int)：如 42, -17, 0\n• 浮点数 (float)：如 3.14, -2.5\n• 字符串 (string)：如 "Hello", "AeDA"\n• 布尔值 (boolean)：true 或 false\n\n变量命名规则：\n• 使用有意义的名称（age 而不是 a）\n• 遵循驼峰命名法（firstName）\n• 避免关键字和特殊字符\n\n实际应用：在任何程序中，变量都用来存储用户输入、计算结果、状态信息等。掌握变量是学习编程的第一步。',
             prerequisites: [],
-            resources: ['Interactive Tutorial', 'Video Lessons', 'Code Examples'],
-            problems: ['Variable Declaration', 'Type Conversion', 'Scope Understanding']
+            resources: ['变量声明与初始化', '数据类型转换', '作用域详解', '内存管理基础'],
+            problems: ['变量命名规范', '类型安全检查', '作用域理解', '内存泄漏预防']
         },
         conditionals: {
             title: 'Conditional Statements',
-            description: 'Control structures that allow programs to make decisions based on different conditions using if, else if, and else statements.',
+            description: '条件语句是程序的"决策大脑"，让程序能够根据不同情况执行不同的代码路径。就像现实生活中的"如果...那么..."逻辑。\n\n基本结构：\n• if 语句：如果条件为真，执行代码块\n• else 语句：如果条件为假，执行替代代码\n• else if：处理多个条件的链式判断\n\n比较操作符：\n• == 等于, != 不等于\n• > 大于, < 小于\n• >= 大于等于, <= 小于等于\n\n逻辑操作符：\n• && (AND)：两个条件都为真\n• || (OR)：任一条件为真\n• ! (NOT)：条件取反\n\n实际场景：\n• 用户登录验证：检查用户名和密码\n• 年龄判断：确定是否成年\n• 游戏逻辑：角色生命值判断\n• 表单验证：检查输入是否有效\n\nSwitch 语句：当需要处理多个固定值的判断时，switch 比多个 if-else 更清晰高效。',
             prerequisites: ['Variables'],
-            resources: ['Logic Flow Charts', 'Practice Problems', 'Real-world Examples'],
-            problems: ['Boolean Logic', 'Nested Conditions', 'Switch Statements']
+            resources: ['布尔逻辑基础', '条件表达式设计', '嵌套条件优化', '三元运算符'],
+            problems: ['复杂条件逻辑', '条件嵌套深度', '边界条件处理', '性能优化']
         },
         loops: {
             title: 'Loops and Iteration',
-            description: 'Repetitive control structures including for loops, while loops, and do-while loops that allow code to execute multiple times.',
+            description: '循环是编程中的"重复执行器"，让程序能够自动重复执行代码块，避免重复编写相同代码。就像工厂流水线一样高效处理批量任务。\n\n三种主要循环类型：\n\n1. For 循环 - 已知次数的循环\n• 语法：for(初始化; 条件; 更新)\n• 适用：遍历数组、重复固定次数\n• 示例：打印 1 到 10 的数字\n\n2. While 循环 - 条件驱动的循环\n• 语法：while(条件)\n• 适用：不确定循环次数的情况\n• 示例：读取文件直到结束\n\n3. Do-While 循环 - 至少执行一次\n• 语法：do { 代码 } while(条件)\n• 适用：需要先执行再判断的场景\n• 示例：用户菜单选择\n\n重要概念：\n• 循环变量：控制循环次数的变量\n• 循环体：重复执行的代码块\n• 终止条件：防止无限循环的条件\n\n常见陷阱：\n• 无限循环：忘记更新循环条件\n• Off-by-one 错误：循环边界错误\n\n实际应用：数据处理、用户界面更新、游戏主循环、批量文件处理等。',
             prerequisites: ['Variables', 'Conditionals'],
-            resources: ['Loop Patterns', 'Performance Tips', 'Common Mistakes'],
-            problems: ['Loop Design', 'Infinite Loops', 'Nested Loops']
+            resources: ['循环设计模式', '性能优化技巧', '嵌套循环应用', '循环不变式'],
+            problems: ['无限循环调试', '循环效率优化', '边界条件处理', '嵌套循环复杂度']
         },
         functions: {
             title: 'Functions and Modularity',
-            description: 'Reusable blocks of code that perform specific tasks. Functions help organize code, reduce repetition, and improve maintainability.',
+            description: '函数是编程的"工具箱"，将复杂问题分解成可管理的小块。就像数学中的函数 f(x) = x²，接受输入并产生输出。\n\n核心概念：\n• 函数定义：创建可重用的代码块\n• 函数调用：执行已定义的函数\n• 参数：函数的输入数据\n• 返回值：函数的输出结果\n\n函数的优势：\n• 代码重用：避免重复编写相同逻辑\n• 模块化：将大问题分解为小问题\n• 易于测试：独立测试每个功能\n• 易于维护：修改功能只需改一处\n\n参数传递方式：\n• 按值传递：传递数据的副本\n• 按引用传递：传递数据的地址\n\n作用域概念：\n• 局部变量：函数内部定义的变量\n• 全局变量：程序全局可访问的变量\n• 参数作用域：参数在函数内的可见性\n\n函数设计原则：\n• 单一职责：每个函数只做一件事\n• 有意义的命名：函数名要说明其功能\n• 适当的参数：不过多不过少\n• 清晰的返回值：明确函数的输出\n\n实际应用：计算器功能、数据验证、用户界面组件、算法实现等。',
             prerequisites: ['Variables', 'Conditionals', 'Loops'],
-            resources: ['Function Patterns', 'Best Practices', 'Parameter Passing'],
-            problems: ['Function Design', 'Return Values', 'Scope Management']
+            resources: ['函数设计原则', '参数传递机制', '递归函数入门', '高阶函数概念'],
+            problems: ['函数分解策略', '参数设计优化', '返回值处理', '作用域管理']
         },
         arrays: {
             title: 'Arrays and Collections',
-            description: 'Data structures that store multiple values in a single variable, allowing efficient organization and manipulation of related data.',
+            description: '数组是编程中的"整理箱"，能够在一个变量中存储多个相同类型的数据项。就像书架上按顺序排列的书籍，每本书都有固定的位置编号。\n\n基本概念：\n• 元素：数组中的每个数据项\n• 索引：元素在数组中的位置（通常从 0 开始）\n• 长度：数组包含的元素个数\n• 连续存储：元素在内存中连续排列\n\n数组操作：\n• 访问：通过索引获取元素值\n• 修改：通过索引更改元素值\n• 遍历：依次访问所有元素\n• 搜索：查找特定元素的位置\n\n常用数组方法：\n• 添加元素：push(), unshift()\n• 删除元素：pop(), shift(), splice()\n• 查找元素：indexOf(), find(), includes()\n• 变换数组：map(), filter(), reduce()\n\n多维数组：\n• 二维数组：表格形式的数据（如棋盘）\n• 三维数组：立体数据结构\n• 访问方式：array[row][column]\n\n数组 vs 其他数据结构：\n• 优势：随机访问快、内存效率高\n• 劣势：插入删除慢、大小固定\n\n实际应用：\n• 学生成绩列表\n• 购物车商品\n• 游戏地图数据\n• 图像像素数据\n• 音频采样数据',
             prerequisites: ['Variables', 'Loops'],
-            resources: ['Array Methods', 'Algorithms', 'Data Manipulation'],
-            problems: ['Array Traversal', 'Searching', 'Sorting']
+            resources: ['数组算法集合', '多维数组应用', '动态数组实现', '数组性能分析'],
+            problems: ['数组边界检查', '内存管理优化', '查找算法选择', '排序算法实现']
         },
         strings: {
             title: 'String Processing',
-            description: 'Working with text data including string manipulation, formatting, pattern matching, and text processing algorithms.',
-            prerequisites: ['Variables', 'Loops'],
-            resources: ['String Methods', 'Regular Expressions', 'Text Algorithms'],
-            problems: ['String Parsing', 'Pattern Matching', 'Text Validation']
+            description: '字符串是编程中的"文本处理器"，用于处理和操作文本数据。在现代应用中，文本处理无处不在，从用户界面到数据分析。\n\n字符串基础：\n• 字符序列：字符串是字符的有序集合\n• 不可变性：很多语言中字符串创建后不可修改\n• 字符编码：ASCII、UTF-8、Unicode 等\n• 转义字符：\\n（换行）、\\t（制表符）等\n\n核心操作：\n• 连接：将多个字符串合并\n• 分割：按分隔符将字符串拆分\n• 搜索：查找子字符串位置\n• 替换：用新内容替换指定部分\n• 截取：提取字符串的一部分\n\n常用字符串方法：\n• length：获取字符串长度\n• substring/slice：截取子字符串\n• indexOf/search：查找子字符串\n• replace：替换内容\n• split：分割为数组\n• trim：去除空白字符\n\n正则表达式：\n• 模式匹配：用特殊语法描述文本模式\n• 验证功能：检查邮箱、电话号码格式\n• 提取数据：从文本中提取所需信息\n• 批量替换：复杂的查找替换操作\n\n字符串算法：\n• 回文检测：判断字符串是否对称\n• 字符统计：计算字符出现频率\n• 字符串匹配：KMP、Boyer-Moore 算法\n• 编辑距离：计算字符串相似度\n\n实际应用：\n• 用户输入验证\n• 文本编辑器功能\n• 日志分析\n• 自然语言处理\n• 网页内容解析',
+            prerequisites: ['Variables', 'Arrays'],
+            resources: ['正则表达式指南', '字符编码详解', '文本算法集合', '国际化处理'],
+            problems: ['字符编码处理', '性能优化技巧', '模式匹配复杂度', '内存使用优化']
+        },
+        objects: {
+            title: 'Objects and Classes',
+            description: '对象是现实世界实体在编程中的抽象表示。就像现实中的"汽车"有颜色、品牌等属性，以及启动、刹车等行为。\n\n面向对象核心概念：\n• 对象：数据和操作数据方法的集合\n• 属性：对象的特征和状态\n• 方法：对象能执行的操作\n• 实例：类的具体实现\n\n对象的优势：\n• 数据封装：相关数据组织在一起\n• 现实建模：更接近人类思维方式\n• 代码重用：对象可以被多次使用\n• 易于维护：修改局限在对象内部\n\n对象创建方式：\n• 字面量语法：{name: "John", age: 25}\n• 构造函数：new Person("John", 25)\n• Object.create()：基于原型创建\n• ES6 类语法：class Person {}\n\n对象操作：\n• 属性访问：obj.property 或 obj["property"]\n• 属性修改：obj.property = newValue\n• 方法调用：obj.method()\n• 属性遍历：for...in 循环\n\n实际应用示例：\n• 用户对象：姓名、邮箱、登录方法\n• 商品对象：价格、库存、购买方法\n• 游戏角色：生命值、技能、攻击方法\n• 图形对象：坐标、颜色、绘制方法',
+            prerequisites: ['Functions', 'Arrays'],
+            resources: ['对象设计模式', '原型链机制', '属性描述符', '对象序列化'],
+            problems: ['对象设计原则', '内存管理', '属性访问优化', '对象拷贝策略']
+        },
+        classes: {
+            title: 'Classes and Inheritance',
+            description: '类是创建对象的"蓝图"或"模板"，定义了对象应该具有的属性和方法。继承让类能够共享和扩展其他类的特性。\n\n类的基本概念：\n• 类定义：描述对象结构的模板\n• 构造函数：创建对象时执行的初始化方法\n• 实例化：根据类创建具体对象的过程\n• 成员变量：类中定义的属性\n• 成员方法：类中定义的函数\n\n继承机制：\n• 父类/基类：被继承的类\n• 子类/派生类：继承其他类的类\n• super 关键字：访问父类的方法和属性\n• 方法重写：子类重新定义父类方法\n• 多态：同一接口的不同实现\n\n访问控制：\n• public：公开访问\n• private：私有访问（仅类内部）\n• protected：保护访问（类和子类）\n• static：静态成员（属于类而非实例）\n\n设计原则：\n• 封装：隐藏内部实现细节\n• 继承：复用和扩展现有代码\n• 多态：统一接口，不同实现\n• 抽象：关注要做什么，而非怎么做\n\n实际应用：\n• 动物类 → 猫类、狗类\n• 交通工具 → 汽车、飞机、船\n• UI组件 → 按钮、输入框、对话框\n• 数据结构 → 栈、队列、树',
+            prerequisites: ['Objects', 'Functions'],
+            resources: ['设计模式应用', '继承vs组合', '抽象类接口', '类图设计'],
+            problems: ['继承层次设计', '菱形继承问题', '接口设计原则', '代码复用策略']
         }
     };
     
@@ -868,6 +882,7 @@ function createKnowledgeGraphAnimated(graphData) {
         group.style.opacity = '0';
         group.style.transform = 'scale(0)';
         group.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        group.style.transformOrigin = 'center';
         
         // Circle
         const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
@@ -912,12 +927,18 @@ function createKnowledgeGraphAnimated(graphData) {
         // Add subtle click effect
         group.addEventListener('click', () => {
             // Very gentle pulse animation - just a micro scale
-            group.style.transform = 'scale(1.05)';
+            const originalTransition = group.style.transition;
             group.style.transition = 'transform 0.1s ease-out';
+            group.style.transform = 'scale(1.05)';
             
             setTimeout(() => {
-                group.style.transform = 'scale(1)';
                 group.style.transition = 'transform 0.1s ease-in';
+                group.style.transform = 'scale(1)';
+                
+                // Restore original transition after animation
+                setTimeout(() => {
+                    group.style.transition = originalTransition;
+                }, 100);
             }, 100);
             
             const knowledgeType = node.id;
