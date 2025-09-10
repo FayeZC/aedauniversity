@@ -905,9 +905,11 @@ function createKnowledgeGraphAnimated(graphData) {
         group.appendChild(subtitle);
         svg.appendChild(group);
         
-        // Simply show the node
+        // Simply show the node and set transform origin
         setTimeout(() => {
             group.style.opacity = '1';
+            // Set transform origin to the center of the node for smooth scaling
+            group.style.transformOrigin = `${node.x}px ${node.y}px`;
         }, index * 100 + 50);
         
         // Simple click handler - no animations

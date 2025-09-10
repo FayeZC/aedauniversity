@@ -387,6 +387,11 @@ body {
 
 .knowledge-node {
   cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.knowledge-node:hover {
+  transform: scale(1.08);
 }
 
 .knowledge-node.completed circle {
