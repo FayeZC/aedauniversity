@@ -1,5 +1,3 @@
-// AeDA Website JavaScript - Static Version
-// Static Website Configuration
 const CONFIG = {
     demo: {
         url: 'demo.html'
@@ -7,35 +5,30 @@ const CONFIG = {
     contact: {
         email: 'hello@aedauniversity.com'
     },
-    static: true // Flag to indicate this is a static version
+    static: true
 };
 
-// Static API Functions
 const API = {
-    // For static site - redirect to demo
     handleGetStarted() {
         console.log('Redirecting to demo page');
         window.location.href = CONFIG.demo.url;
     },
 
-    // For static site - redirect to demo
     redirectToFrontend(route = '/') {
         console.log('Redirecting to demo page');
         window.location.href = CONFIG.demo.url;
     },
 
-    // Show information about the platform
     showInfo() {
-        const message = `🚀 Welcome to AeDA!
+        const message = `Welcome to AeDA!
         
-✨ Try our interactive demo
-📧 Contact: ${CONFIG.contact.email}
-🌟 This is a preview of our upcoming platform`;
+Try our interactive demo
+Contact: ${CONFIG.contact.email}
+This is a preview of our upcoming platform`;
         alert(message);
     }
 };
 
-// Drag and Drop functionality for floating cards
 function initDraggableCards() {
     const cards = document.querySelectorAll('.floating-card');
     
@@ -167,30 +160,23 @@ function initSmoothScrolling() {
     });
 }
 
-// Initialize website functionality
 document.addEventListener('DOMContentLoaded', function() {
     console.log('AeDA Website initialized successfully!');
     
-    // Initialize components
     initDraggableCards();
     initMobileMenu();
     initSmoothScrolling();
     
-    // Show static site message
     console.log('Running in static mode - demo functionality available');
 });
 
-// Handle window resize for responsive layout
 window.addEventListener('resize', () => {
-    // Reset card positions if needed
     const cards = document.querySelectorAll('.floating-card');
     cards.forEach(card => {
-        // Ensure cards stay within bounds after resize
         const rect = card.getBoundingClientRect();
         const parentRect = card.parentElement.getBoundingClientRect();
         
         if (rect.right > parentRect.right || rect.bottom > parentRect.bottom) {
-            // Reset to default position
             card.style.right = '';
             card.style.top = '';
         }

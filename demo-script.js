@@ -1,16 +1,12 @@
-// AeDA Demo Interactive Script
-
 document.addEventListener('DOMContentLoaded', function() {
     initializeDemo();
 });
 
 function initializeDemo() {
-    // Initialize knowledge graph
     if (document.getElementById('knowledge-svg')) {
         switchKnowledgeGraph('fundamentals');
     }
     
-    // Tab navigation
     const navTabs = document.querySelectorAll('.nav-tab');
     const demoSections = document.querySelectorAll('.demo-section');
     
@@ -19,38 +15,31 @@ function initializeDemo() {
             const targetTab = tab.getAttribute('data-tab');
             switchTab(targetTab);
             
-            // Update active tab
             navTabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
         });
     });
     
-    // Filter tabs for courses
     const filterTabs = document.querySelectorAll('.filter-tab');
     filterTabs.forEach(tab => {
         tab.addEventListener('click', () => {
             filterTabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
-            
-            // Simulate filtering (in real app, this would filter courses)
             simulateLoading();
         });
     });
     
-    // Knowledge graph controls
     const controlBtns = document.querySelectorAll('.control-btn');
     controlBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             controlBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             
-            // Switch to different learning path
             const graphType = btn.getAttribute('data-graph');
             switchKnowledgeGraph(graphType);
         });
     });
     
-    // Knowledge node interactions
     const knowledgeNodes = document.querySelectorAll('.knowledge-node');
     knowledgeNodes.forEach(node => {
         node.addEventListener('click', () => {
@@ -59,7 +48,6 @@ function initializeDemo() {
         });
     });
     
-    // Color mode selector
     const colorModeSelect = document.getElementById('colorMode');
     if (colorModeSelect) {
         colorModeSelect.addEventListener('change', (e) => {
@@ -67,7 +55,6 @@ function initializeDemo() {
         });
     }
     
-    // Course card interactions
     const courseCards = document.querySelectorAll('.course-card');
     courseCards.forEach(card => {
         card.addEventListener('click', () => {
@@ -75,7 +62,6 @@ function initializeDemo() {
         });
     });
     
-    // Upload simulation
     const uploadBtn = document.querySelector('.upload-btn');
     if (uploadBtn) {
         uploadBtn.addEventListener('click', () => {
@@ -83,7 +69,6 @@ function initializeDemo() {
         });
     }
     
-    // API endpoint interactions
     const endpointItems = document.querySelectorAll('.endpoint-item');
     endpointItems.forEach(item => {
         item.addEventListener('click', () => {
@@ -91,7 +76,6 @@ function initializeDemo() {
         });
     });
     
-    // Search functionality
     const searchBtn = document.querySelector('.search-btn');
     if (searchBtn) {
         searchBtn.addEventListener('click', (e) => {
@@ -100,10 +84,7 @@ function initializeDemo() {
         });
     }
     
-    // Progress animations
     animateProgressBars();
-    
-    // Knowledge graph interactions
     initializeKnowledgeGraph();
 }
 
@@ -117,7 +98,6 @@ function switchTab(tabName) {
     if (targetSection) {
         targetSection.classList.add('active');
         
-        // Trigger specific animations for each section
         switch(tabName) {
             case 'courses':
                 animateCoursesSection();
@@ -158,7 +138,6 @@ function updateKnowledgeGraph() {
         }, index * 50);
     });
     
-    // Animate connections
     const lines = document.querySelectorAll('line');
     lines.forEach((line, index) => {
         line.style.opacity = '0';
@@ -171,7 +150,6 @@ function updateKnowledgeGraph() {
 function showCourseDetail(card) {
     const courseName = card.querySelector('h3').textContent;
     
-    // Create modal effect (simplified)
     card.style.transform = 'scale(1.05)';
     card.style.boxShadow = '0 20px 40px rgba(139, 92, 246, 0.3)';
     card.style.zIndex = '10';
@@ -181,7 +159,6 @@ function showCourseDetail(card) {
         card.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
         card.style.zIndex = '1';
         
-        // Show notification
         showNotification(`Opening ${courseName}...`);
     }, 300);
 }
@@ -197,12 +174,11 @@ function simulateFileUpload() {
         uploadArea.style.background = 'white';
         uploadArea.style.color = 'inherit';
         
-        // Add new file to list
         const newFile = document.createElement('div');
         newFile.className = 'file-item';
         newFile.innerHTML = `
             <span class="file-name">new_lecture_${Date.now()}.pdf</span>
-            <span class="file-status uploaded">✓</span>
+            <span class="file-status uploaded">Uploaded</span>
         `;
         newFile.style.opacity = '0';
         newFile.style.transform = 'translateY(-10px)';
@@ -229,7 +205,6 @@ function toggleEndpointResponse(item) {
         response.style.display = 'block';
         item.style.border = '2px solid var(--primary-purple)';
         
-        // Animate the response appearing
         response.style.opacity = '0';
         setTimeout(() => {
             response.style.opacity = '1';
@@ -243,7 +218,6 @@ function simulateSearch() {
     
     searchInput.style.borderColor = 'var(--primary-purple)';
     
-    // Simulate loading
     coursesGrid.style.opacity = '0.5';
     
     setTimeout(() => {
@@ -311,7 +285,6 @@ function animateKnowledgeGraph() {
 }
 
 function animateAcademicProgram() {
-    // Animate stat cards
     const statCards = document.querySelectorAll('.stat-card');
     statCards.forEach((card, index) => {
         card.style.opacity = '0';
@@ -323,7 +296,6 @@ function animateAcademicProgram() {
         }, index * 150);
     });
     
-    // Animate course items
     setTimeout(() => {
         const courseItems = document.querySelectorAll('.course-item');
         courseItems.forEach((item, index) => {
@@ -337,7 +309,6 @@ function animateAcademicProgram() {
         });
     }, 400);
     
-    // Animate semester cards
     setTimeout(() => {
         const semesterCards = document.querySelectorAll('.semester-card');
         semesterCards.forEach((card, index) => {
@@ -461,7 +432,7 @@ document.addEventListener('click', () => {
     clickCount++;
     
     if (clickCount === 20) {
-        showNotification('🎉 You\'re really exploring! Welcome to AeDA!');
+        showNotification('You\'re really exploring! Welcome to AeDA!');
         clickCount = 0;
     }
 });
@@ -528,10 +499,10 @@ function showKnowledgeDetail(knowledgeType) {
         },
         classes: {
             title: 'Classes and Inheritance',
-            description: '类是创建对象的"蓝图"或"模板"，定义了对象应该具有的属性和方法。继承让类能够共享和扩展其他类的特性。\n\n类的基本概念：\n• 类定义：描述对象结构的模板\n• 构造函数：创建对象时执行的初始化方法\n• 实例化：根据类创建具体对象的过程\n• 成员变量：类中定义的属性\n• 成员方法：类中定义的函数\n\n继承机制：\n• 父类/基类：被继承的类\n• 子类/派生类：继承其他类的类\n• super 关键字：访问父类的方法和属性\n• 方法重写：子类重新定义父类方法\n• 多态：同一接口的不同实现\n\n访问控制：\n• public：公开访问\n• private：私有访问（仅类内部）\n• protected：保护访问（类和子类）\n• static：静态成员（属于类而非实例）\n\n设计原则：\n• 封装：隐藏内部实现细节\n• 继承：复用和扩展现有代码\n• 多态：统一接口，不同实现\n• 抽象：关注要做什么，而非怎么做\n\n实际应用：\n• 动物类 → 猫类、狗类\n• 交通工具 → 汽车、飞机、船\n• UI组件 → 按钮、输入框、对话框\n• 数据结构 → 栈、队列、树',
+            description: 'Classes are "blueprints" or "templates" for creating objects, defining the properties and methods that objects should have. Inheritance allows classes to share and extend features from other classes.\n\nCore Class Concepts:\n• Class definition: Template describing object structure\n• Constructor: Initialization method executed when creating objects\n• Instantiation: Process of creating specific objects from a class\n• Member variables: Properties defined in the class\n• Member methods: Functions defined in the class\n\nInheritance Mechanism:\n• Parent/Base class: The class being inherited from\n• Child/Derived class: The class that inherits from another\n• super keyword: Access parent class methods and properties\n• Method overriding: Child class redefines parent methods\n• Polymorphism: Same interface, different implementations\n\nAccess Control:\n• public: Open access\n• private: Private access (class internal only)\n• protected: Protected access (class and subclasses)\n• static: Static members (belong to class, not instance)\n\nDesign Principles:\n• Encapsulation: Hide internal implementation details\n• Inheritance: Reuse and extend existing code\n• Polymorphism: Unified interface, different implementations\n• Abstraction: Focus on what to do, not how to do it\n\nPractical Applications:\n• Animal class → Cat class, Dog class\n• Vehicle → Car, Airplane, Ship\n• UI Components → Button, Input field, Dialog\n• Data Structures → Stack, Queue, Tree',
             prerequisites: ['Objects', 'Functions'],
-            resources: ['设计模式应用', '继承vs组合', '抽象类接口', '类图设计'],
-            problems: ['继承层次设计', '菱形继承问题', '接口设计原则', '代码复用策略']
+            resources: ['Design Pattern Applications', 'Inheritance vs Composition', 'Abstract Classes and Interfaces', 'Class Diagram Design'],
+            problems: ['Inheritance Hierarchy Design', 'Diamond Inheritance Problem', 'Interface Design Principles', 'Code Reuse Strategies']
         }
     };
     
@@ -595,26 +566,26 @@ function showKnowledgeModal(data) {
                 </div>
                 <div class="knowledge-modal-body">
                     <div class="knowledge-modal-section">
-                        <h4>📖 Description</h4>
+                        <h4>Description</h4>
                         <p>${data.description}</p>
                     </div>
                     <div class="knowledge-modal-section">
-                        <h4>📋 Prerequisites</h4>
+                        <h4>Prerequisites</h4>
                         <div class="knowledge-modal-tags">
                             ${data.prerequisites.length > 0 
                                 ? data.prerequisites.map(p => `<span class="knowledge-tag prerequisite">${p}</span>`).join('')
-                                : '<span class="no-prerequisites">✅ No prerequisites needed</span>'
+                                : '<span class="no-prerequisites">No prerequisites needed</span>'
                             }
                         </div>
                     </div>
                     <div class="knowledge-modal-section">
-                        <h4>📚 Learning Resources</h4>
+                        <h4>Learning Resources</h4>
                         <div class="knowledge-modal-tags">
                             ${data.resources.map(r => `<span class="knowledge-tag resource">${r}</span>`).join('')}
                         </div>
                     </div>
                     <div class="knowledge-modal-section">
-                        <h4>🎯 Practice Areas</h4>
+                        <h4>Practice Areas</h4>
                         <div class="knowledge-modal-tags">
                             ${data.problems.map(p => `<span class="knowledge-tag problem">${p}</span>`).join('')}
                         </div>
@@ -662,7 +633,6 @@ function showKnowledgeModal(data) {
 function closeKnowledgeModal() {
     const modal = document.getElementById('knowledge-modal');
     if (modal) {
-        // Remove ESC key listener
         if (modal.escHandler) {
             document.removeEventListener('keydown', modal.escHandler);
         }
@@ -673,7 +643,6 @@ function closeKnowledgeModal() {
         }, 300);
     }
     
-    // Remove highlights
     document.querySelectorAll('.knowledge-node').forEach(node => {
         node.classList.remove('selected');
     });
@@ -683,7 +652,6 @@ function closeKnowledgeDetail() {
     const detailPanel = document.getElementById('knowledge-detail');
     detailPanel.style.display = 'none';
     
-    // Remove highlights
     document.querySelectorAll('.knowledge-node').forEach(node => {
         node.classList.remove('selected');
     });
@@ -971,13 +939,11 @@ function updateKnowledgeStats(stats) {
     const total = stats.completed + stats.current + stats.available + stats.locked;
     const progress = Math.round(((stats.completed + stats.current) / total) * 100);
     
-    // Update legend counts
     document.querySelector('.legend-item:nth-child(1) span').textContent = `Mastered (${stats.completed})`;
     document.querySelector('.legend-item:nth-child(2) span').textContent = `Learning (${stats.current})`;
     document.querySelector('.legend-item:nth-child(3) span').textContent = `Available (${stats.available})`;
     document.querySelector('.legend-item:nth-child(4) span').textContent = `Locked (${stats.locked})`;
     
-    // Update progress stats
     document.querySelector('.stat-item:nth-child(1) .stat-value').textContent = `${progress}% (${stats.completed + stats.current}/${total})`;
 }
 
@@ -998,11 +964,11 @@ function updateGreeting() {
     let greeting = 'Welcome to AeDA Demo';
     
     if (hour < 12) {
-        greeting = '🌅 Good morning! Explore AeDA Demo';
+        greeting = 'Good morning! Explore AeDA Demo';
     } else if (hour < 18) {
-        greeting = '☀️ Good afternoon! Discover AeDA';
+        greeting = 'Good afternoon! Discover AeDA';
     } else {
-        greeting = '🌙 Good evening! Experience AeDA';
+        greeting = 'Good evening! Experience AeDA';
     }
     
     // Update any greeting elements if they exist

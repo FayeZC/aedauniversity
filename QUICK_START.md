@@ -18,9 +18,9 @@ cd /Users/faye/Documents/WorkSpace/aedaWebsite && python3 -m http.server 8000
 ```
 
 ## Verification URLs
-- 🏠 Homepage: http://localhost:8000
-- 🎯 Frontend: http://localhost:5174  
-- ⚙️ Backend: http://localhost:8081
+- Homepage: http://localhost:8000
+- Frontend: http://localhost:5174  
+- Backend: http://localhost:8081
 
 ## Status Check
 Visit the homepage (localhost:8000) - check bottom-right corner for service status indicators.
