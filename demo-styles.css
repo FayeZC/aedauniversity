@@ -412,8 +412,8 @@ body {
 }
 
 .knowledge-node:active {
-  transform: scale(1.02);
-  transition: transform 0.15s ease;
+  transform: scale(1.03);
+  transition: transform 0.08s ease;
 }
 
 @keyframes completedPulse {

@@ -909,13 +909,16 @@ function createKnowledgeGraphAnimated(graphData) {
             group.style.transform = 'scale(1)';
         }, index * 100 + 50);
         
-        // Add gentle click effect
+        // Add subtle click effect
         group.addEventListener('click', () => {
-            // Gentle scale animation
-            group.style.transform = 'scale(1.1)';
+            // Very gentle pulse animation - just a micro scale
+            group.style.transform = 'scale(1.05)';
+            group.style.transition = 'transform 0.1s ease-out';
+            
             setTimeout(() => {
                 group.style.transform = 'scale(1)';
-            }, 150);
+                group.style.transition = 'transform 0.1s ease-in';
+            }, 100);
             
             const knowledgeType = node.id;
             showKnowledgeDetail(knowledgeType);
