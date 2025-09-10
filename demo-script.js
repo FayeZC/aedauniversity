@@ -392,15 +392,6 @@ function initializeKnowledgeGraph() {
             const currentFill = circle.getAttribute('fill');
             
             if (currentFill !== '#d1d5db') { // Not locked
-                // Simulate node expansion
-                circle.style.transform = 'scale(1.5)';
-                circle.style.filter = 'drop-shadow(0 0 10px rgba(139, 92, 246, 0.5))';
-                
-                setTimeout(() => {
-                    circle.style.transform = 'scale(1)';
-                    circle.style.filter = 'none';
-                }, 500);
-                
                 const nodeText = node.querySelector('text').textContent;
                 showNotification(`Exploring ${nodeText} knowledge point...`);
             }
@@ -826,11 +817,10 @@ function switchKnowledgeGraph(graphType) {
     const existingNodes = svg.querySelectorAll('.knowledge-node');
     const existingLines = svg.querySelectorAll('line');
     
-    // Animate existing elements out
+    // Simply hide existing elements
     existingNodes.forEach((node, index) => {
         setTimeout(() => {
             node.style.opacity = '0';
-            node.style.transform = 'scale(0)';
         }, index * 30);
     });
     

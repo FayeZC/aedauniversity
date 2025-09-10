@@ -1390,11 +1390,7 @@ body {
 
 /* Interactive Elements */
 .knowledge-node circle {
-  transition: all 0.3s ease;
-}
-
-.knowledge-node:hover circle {
-  transform: scale(1.1);
+  /* No animations */
 }
 
 .chart-bar:hover {
